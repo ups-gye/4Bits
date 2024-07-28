@@ -331,10 +331,10 @@ GameObject:
   - component: {fileID: 3206877295172265221}
   - component: {fileID: 5473364980085568631}
   - component: {fileID: 6978907340923745363}
+  - component: {fileID: 1693647118096044269}
   - component: {fileID: 5897306415653012785}
   - component: {fileID: 2608139345638638227}
   - component: {fileID: 1433952823275956618}
-  - component: {fileID: 1693647118096044269}
   - component: {fileID: 5456051122868343019}
   m_Layer: 0
   m_Name: Personaje
@@ -428,6 +428,23 @@ MonoBehaviour:
   syncInterval: 0
   animator: {fileID: 2608139345638638227}
   speed: 4
+  popUp: {fileID: 3090800123293252797, guid: 8a60dfa7120d1a5e899badba5e5d492d, type: 3}
+--- !u!114 &1693647118096044269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5772309438835819377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bf7ace3b5fd7b84cbf8c65bd129cd36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  taskSldr: {fileID: 8838608970390441318}
 --- !u!61 &5897306415653012785
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -511,23 +528,6 @@ MonoBehaviour:
   serverOnly: 0
   visibility: 0
   hasSpawned: 0
---- !u!114 &1693647118096044269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5772309438835819377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bf7ace3b5fd7b84cbf8c65bd129cd36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  taskSldr: {fileID: 8838608970390441318}
-  task_completed: 0
 --- !u!114 &5456051122868343019
 MonoBehaviour:
   m_ObjectHideFlags: 0

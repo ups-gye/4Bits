@@ -6,7 +6,7 @@ public class SyncVarPlayers : NetworkBehaviour
 {
     [SerializeField] private Slider taskSldr = null; // Asigna el Slider en el inspector de Unity
     private const int maxTasks = 10;
-    
+
     [SyncVar(hook = nameof(OnTaskChange))]
     private int task_completed = 0;
 
@@ -30,16 +30,14 @@ public class SyncVarPlayers : NetworkBehaviour
     [Server]
     public void SetTaskCompleted(int taskCompleted)
     {
-        task_completed = taskCompleted;
+        task_completed = Mathf.Clamp(taskCompleted, 0, maxTasks);
+        Debug.Log($"Tarea completada actualizada: {task_completed}");
     }
 
     [Command]
     public void CmdSetTaskCompleted(int taskCompleted)
     {
-        if(taskCompleted >= 0 && taskCompleted <= maxTasks)
-        {
-            SetTaskCompleted(taskCompleted);
-        }
+        SetTaskCompleted(taskCompleted);
     }
 
     public void CompleteTask()
@@ -54,5 +52,6 @@ public class SyncVarPlayers : NetworkBehaviour
         {
             taskSldr.value = newTaskCompleted;
         }
+        Debug.Log($"Tarea completada actualizada: {newTaskCompleted}");
     }
 }
